@@ -707,6 +707,20 @@ namespace pwExtensionsLibrary
         {
             return string.Compare(strA, strB, comparisonType) == 0;
         }
+
+        /// <summary>
+        /// Capitalizes the first letter of the string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string Capitalize(this string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return input;
+            }
+            return char.ToUpper(input[0]) + input.Substring(1);
+        }
     }
 
 }
