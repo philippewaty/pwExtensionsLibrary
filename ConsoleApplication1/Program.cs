@@ -308,6 +308,28 @@ namespace ConsoleApplication1
             Console.WriteLine("------");
             Console.WriteLine($"5 is between 1 and 10? : {5.IsBetween(1, 10)}");
             Console.WriteLine($"11 is between 1 and 10? : {11.IsBetween(1, 10)}");
+
+            // With explicit types (uses specific overloads)
+            int num1 = 42;
+            bool isEven1 = num1.IsEven(); // true
+            Console.WriteLine($"{num1} is even? : {isEven1}");
+
+            int num2 = 43;
+            bool isEven2 = num2.IsEven(); // false
+            Console.WriteLine($"{num2} is even? : {isEven2}");
+
+            // Works even with less common types
+            uint unum = 100u;
+            bool isEvenU = unum.IsEven(); // true
+            Console.WriteLine($"{unum} is even? : {isEvenU}");
+
+            long sb = 7;
+            bool isOddSb = sb.IsOdd(); // true
+            Console.WriteLine($"{sb} is odd? : {isOddSb}");
+
+            string s = "12345";
+            bool isEvenS = s.IsEven(); // false
+            Console.WriteLine($"{s} is even? : {isEvenS}");
         }
 
         static void TestDirectoryInfo()

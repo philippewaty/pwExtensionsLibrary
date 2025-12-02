@@ -322,6 +322,30 @@ namespace pwExtensionsLibrary
             return float.TryParse(input, out output);
         }
 
+        /// <summary>
+        /// Tests whether the string represents an even number.
+        /// </summary>
+        /// <param name="input">The input string.</param>
+        /// <returns>
+        ///   <c>true</c> if the string represents an even number; otherwise, <c>false</c>.
+        /// </returns>
+        /// <example>
+        /// string value = "42";
+        /// bool isEven = value.IsEven(); // returns true
+        /// 
+        /// string value2 = "13";
+        /// bool isEven2 = value2.IsEven(); // returns false
+        /// </example>
+        public static bool IsEven(this string input)
+        {
+            int number;
+            if (int.TryParse(input, out number))
+            {
+                return number % 2 == 0;
+            }
+            return false;
+        }
+
         /// <summary>Convert text's case to a title case</summary>
         /// <remarks>UppperCase characters is the source string after the first of each word are lowered, unless the word is exactly 2 characters</remarks>
         public static string ToTitleCase(this string value)
