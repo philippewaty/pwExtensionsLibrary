@@ -80,6 +80,8 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("STRING");
             Console.WriteLine("------");
+            string originalString = "hello world";
+            Console.WriteLine("Capitalize string : " + originalString.Capitalize());
             string test = "john.doe@gmail@com";
             Console.WriteLine("abc".Repeat(3));
             Console.WriteLine(test.Repeat(2));
