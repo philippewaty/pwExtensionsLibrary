@@ -181,8 +181,8 @@ namespace ConsoleApplication1
             Console.WriteLine("----------");
 
             Console.WriteLine("".ConvertTo<Boolean>(false, true));
-            Console.WriteLine("0".ConvertTo<Boolean>());
-            Console.WriteLine("1".ConvertTo<Boolean>());
+            Console.WriteLine("0".ConvertTo<bool>());
+            Console.WriteLine("1".ConvertTo<bool>());
             Console.WriteLine("".ConvertTo<Int32>(0, true));
             Console.WriteLine("123".ConvertTo().ToInt32());
             Console.WriteLine(123f.ConvertTo<Int32>());
@@ -208,7 +208,16 @@ namespace ConsoleApplication1
             var numeric = value.ConvertTo().ToInt32();
 
             string sample = null;
+            try
+            {
             int? k = sample.ConvertTo<int?>(); // returns null 
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
             DateTime? dn = "01/12/2008".ConvertTo<DateTime?>();
         }
 
